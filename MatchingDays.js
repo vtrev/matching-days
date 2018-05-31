@@ -12,7 +12,7 @@ var MatchingDays = function () {
         switch (date.getDay()) {
             case 0:
                 return "Sunday";
-                break;
+                break
             case 1:
                 return "Monday";
                 break;

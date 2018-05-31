@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var dates = {};
+    var weekDays = {};
+
+    function doMatch(days) {
+        console.log('days : ' + days.d1);
+        console.log('days : ' + days.d2);
+        if ((days.d1) && (days.d2)) {
+            console.log(match.matchDays(days.d1, days.d2));
+
+        }
+
+
+
+    };
+
 
     var match = MatchingDays();
 
@@ -8,32 +21,31 @@ document.addEventListener('DOMContentLoaded', function () {
     var dateElement1 = document.getElementById('d1');
     var dateElement2 = document.getElementById('d2');
 
-
-
-
     //function to match the two dates from the inputs
     function matchTheDays(date1, date2) {
-        let firstDate = date1;
-        let secondDate = date2;
-        console.log(firstDate);
-        console.log(firstDate);
 
-        var weekDay1 = match.getDays(firstDate);
-        var weekDay2 = match.getDays(firstDate);
-        console.log(match.matchDays(weekDay1, weekDay2));
     }
 
 
-    let date1 = dates.d1;
-    let date2 = dates.d2;
 
-    // console.log(matchTheDays(date1, date2));
+    dateElement1.addEventListener('change', function (event) {
+        var dateString = event.target.value;
+        var dateObject = match.makeDates(dateString);
+        var weekDay = match.getDays(dateObject);
+        weekDays.d1 = weekDay;
+        doMatch(weekDays);
 
 
-    dateElement1.addEventListener('change', function () {
-        localStorage.setItem('date1', JSON.stringify(match.makeDates(this.value)));
     });
-    dateElement2.addEventListener('change', function () {
-        localStorage.setItem('date2', JSON.stringify(match.makeDates(this.value)));
+    dateElement2.addEventListener('change', function (event) {
+
+        var dateString = event.target.value;
+        var dateObject = match.makeDates(dateString);
+        var weekDay = match.getDays(dateObject);
+        weekDays.d2 = weekDay;
+        // runAfterAdd(weekdays);
+        // console.log();
+        doMatch(weekDays);
+
     });
-});
+}, false);

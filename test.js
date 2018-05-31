@@ -4,16 +4,16 @@ describe('getValidDates function', function () {
         let date1 = "2018-05-04";
         let date2 = "2017-06-15"
         let match = MatchingDays();
-        assert.equal(typeof (match.makeDates(date1, date2).d1), 'object');
-        assert.equal(typeof (match.makeDates(date1, date2).d2), 'object');
+        assert.equal(typeof (match.makeDates(date1)), 'object');
+        assert.equal(typeof (match.makeDates(date2)), 'object');
     });
 
     it('Should get the correct weekday given a date', function () {
         let date1 = "2018-05-04";
         let date2 = "2017-06-15";
         let match = MatchingDays();
-        let dateObject1 = match.makeDates(date1, date2).d1;
-        let dateObject2 = match.makeDates(date1, date2).d2;
+        let dateObject1 = match.makeDates(date1);
+        let dateObject2 = match.makeDates(date2);
 
         assert.equal(match.getDays(dateObject1), 'Friday');
         assert.equal(match.getDays(dateObject2), 'Thursday');
