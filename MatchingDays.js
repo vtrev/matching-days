@@ -4,7 +4,6 @@ var MatchingDays = function () {
     let makeDates = function (dateString) {
 
         let dateObject = new Date(dateString);
-        // let d2 = new Date(date1);
         return dateObject
     }
     let getDays = function (date) {
