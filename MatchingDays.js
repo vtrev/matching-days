@@ -1,11 +1,12 @@
 var MatchingDays = function () {
 
-
+    //return a date object given a string
     let makeDates = function (dateString) {
 
         let dateObject = new Date(dateString);
         return dateObject
     }
+    //return a weekday as string given a full date
     let getDays = function (date) {
 
         switch (date.getDay()) {
@@ -31,7 +32,7 @@ var MatchingDays = function () {
                 return "Saturday";
         }
     }
-
+    //take in 2 weekdays and return true if the match, false instead
     var matchDays = function (day1, day2) {
         if (day1 === day2) {
             return true
@@ -46,4 +47,4 @@ var MatchingDays = function () {
         matchDays
     }
 
-}
+};
