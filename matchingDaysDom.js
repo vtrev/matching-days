@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     //match two weekdays
     var doMatch = function (days) {
+        removePreviousStyle();
+        document.getElementById(days.d1 || days.d2).classList.add('match');
         if ((days.d1) && (days.d2)) {
             if (match.matchDays(days.d1, days.d2) == true) {
                 removePreviousStyle();
@@ -36,19 +38,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //event listeners for the two date inputs that will create date objects and store the weekdays into the weekDays object
     dateElement1.addEventListener('change', function (event) {
-        var dateString = event.target.value;
-        var dateObject = match.makeDates(dateString);
-        var weekDay = match.getDays(dateObject);
-        weekDays.d1 = weekDay;
-        doMatch(weekDays);
+        if (event.target.value === null) {
+            removePreviousStyle();
+        } else {
+            var dateString = event.target.value;
+            var dateObject = match.makeDates(dateString);
+            var weekDay = match.getDays(dateObject);
+            weekDays.d1 = weekDay;
+            doMatch(weekDays);
 
+        }
     });
     dateElement2.addEventListener('change', function (event) {
-        var dateString = event.target.value;
-        var dateObject = match.makeDates(dateString);
-        var weekDay = match.getDays(dateObject);
-        weekDays.d2 = weekDay;
-        doMatch(weekDays);
+        if (event.target.value === null) {
+            removePreviousStyle();
+        } else {
+            var dateString = event.target.value;
+            var dateObject = match.makeDates(dateString);
+            var weekDay = match.getDays(dateObject);
+            weekDays.d2 = weekDay;
+            doMatch(weekDays);
 
+        }
     });
 }, false);
