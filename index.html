@@ -6,11 +6,22 @@
     <title>Matching Days</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script type="text/x-template" id="matchingTemplate">
+        {{#each days}} {{#if this.match}}
+        <div class='match'>
+            {{/if}}
+            <p class="textDays box border inline-block ">{{this.day}}</p>
+        </div>
+        {{/each}}
+
+    </script>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-12 center">
+    <div class="row ">
+        <div class="col-12 center ">
             <h1>Matching Days</h1>
             <br>
             <p>Hi there pick two dates from the inputs below and see if the weekdays match!</p>
@@ -18,40 +29,45 @@
         </div>
     </div>
 
-    <div class="row">
-        <div id="boxes-container" class="col-12">
-            <div id="Sunday" class="box border inline-block">
-                <p class="textDays">Sunday</p>
+
+
+    <div class="row ">
+        <div id="boxes-container" class="col-12 ">
+            <!-- <div id="Sunday " class="match1 ">
+                <p class="textDays box border inline-block ">Sunday</p>
             </div>
-            <div id="Monday" class="box border inline-block ">
-                <p class="textDays">Monday</p>
+            <div id="Monday " class="box border inline-block ">
+                <p class="textDays ">Monday</p>
             </div>
-            <div id="Tuesday" class="box border inline-block">
-                <p class="textDays">Tuesday</p>
+            <div id="Tuesday " class="box border inline-block ">
+                <p class="textDays ">Tuesday</p>
             </div>
-            <div id="Wednesday" class="box border inline-block">
-                <p class="textDays">Wednesday</p>
+            <div id="Wednesday " class="box border inline-block ">
+                <p class="textDays ">Wednesday</p>
             </div>
-            <div id="Thursday" class="box border inline-block">
-                <p class="textDays">Thursday</p>
+            <div id="Thursday " class="box border inline-block ">
+                <p class="textDays ">Thursday</p>
             </div>
-            <div id="Friday" class="box border inline-block">
-                <p class="textDays">Friday</p>
+            <div id="Friday " class="box border inline-block ">
+                <p class="textDays ">Friday</p>
             </div>
-            <div id="Saturday" class="box border inline-block">
-                <p class="textDays">Saturday</p>
-            </div>
+            <div id="Saturday " class="box border inline-block ">
+                <p class="textDays ">Saturday</p>
+            </div> -->
         </div>
     </div>
+    <div class="row ">
+        <div id="messageArea " class="col-12 "></div>
 
-    <div class="row center">
-        <div class="col-6 inline-block">
+    </div>
+    <div class="row center ">
+        <div class="col-6 inline-block ">
             <h2>Date 1</h2>
-            <input id="d1" type="date">
+            <input id="d1 " type="date ">
         </div>
-        <div class="col-6 inline-block">
+        <div class="col-6 inline-block ">
             <h2>Date 2</h2>
-            <input id="d2" type="date">
+            <input id="d2 " type="date ">
         </div>
 
 
@@ -60,7 +76,7 @@
 </body>
 
 
-<script type="text/javascript" src="MatchingDays.js"></script>
-<script type="text/javascript" src="matchingDaysDom.js"></script>
+<script type="text/javascript " src="MatchingDays.js "></script>
+<script type="text/javascript " src="matchingDaysDom.js "></script>
 
 </html>

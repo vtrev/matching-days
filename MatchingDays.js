@@ -32,19 +32,70 @@ var MatchingDays = function () {
                 return "Saturday";
         }
     }
-    //take in 2 weekdays and return true if the match, false instead
-    var matchDays = function (day1, day2) {
+
+    function doMatch(day1, day2) {
+        var days = [{
+                day: 'Sunday',
+                status: ''
+            },
+            {
+                day: 'Monday',
+                status: ''
+            },
+            {
+                day: 'Tuesday',
+                status: ''
+            },
+            {
+                day: 'Wednesday',
+                status: ''
+            },
+            {
+                day: 'Thursday',
+                status: ''
+            },
+            {
+                day: 'Friday',
+                status: ''
+            },
+            {
+                day: 'Saturday',
+                status: ''
+            }
+
+
+        ];
         if (day1 === day2) {
-            return true
+
+            for (let i = 0; i < days.length; i++) {
+
+                if (days[i].day == day1) {
+                    days[i].status = 'match';
+                    console.log('matching days :' + day1);
+                }
+            }
+            return days
         } else {
-            return false
+            for (var i = 0; i < days.length; i++) {
+
+                if (days[i].day == day1) {
+                    days[i].match == true;
+                }
+                if (days[i].day == day2) {
+                    days[i].match1 == true;
+                }
+            }
+            return days
         }
-    };
+
+
+
+    }
 
     return {
         makeDates,
         getDays,
-        matchDays
+        doMatch
     }
 
 };
